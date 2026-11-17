@@ -1,3 +1,5 @@
+import os
+from telethon.sessions import StringSession
 from telethon import TelegramClient, events
 import asyncio
 import random
@@ -21,9 +23,12 @@ balasan_otomatis = "Otw kak wait yaw"
 # ==========================================
 
 print("Mencoba login ke Telegram...")
+session_str = os.environ.get('TG_SESSION', '')
 
-client = TelegramClient('sesi_bot', api_id, api_hash)
-
+if session_str:
+    client = TelegramClient(StringSession(session_str), api_id, api_hash)
+else:
+    client = TelegramClient('sesi_bot', api_id, api_hash)
 # --- FITUR AUTO-REPLY + SIMULASI MENGETIK ---
 @client.on(events.NewMessage(incoming=True, pattern=f'(?i){kata_kunci}'))
 async def handler_auto_reply(event):
