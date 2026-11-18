@@ -12,7 +12,7 @@ api_hash = 'd8966ae348811966dfa86d594421e8b1' # Ganti dengan API Hash kamu
 
 # Daftar Grup (Bisa tambah lebih dari satu, pisahkan dengan koma)
 daftar_grup = [
-    -1004489967653,-1003967195113,-1003789805526,-1003967195113
+    -1004489967653,-1003967195113,-1003789805526,-1003967195113,-1002098986854,
 ]
 
 pesan_promosi = "FB/LB GERCEP DONE RC https://www.tiktok.com/@cozzhua?_r=1&_t=ZS-9BULWt86hdc"
