@@ -49,7 +49,7 @@ async def kirim_pesan_berkala():
             try:
                 # SIMULASI MENGETIK (3 sampai 8 detik)
                 async with client.action(grup, 'typing'):
-                    await asyncio.sleep(random.randint(3, 8))
+                    await asyncio.sleep(random.randint(0, 1))
                 
                 await client.send_message(grup, pesan_promosi)
                 print(f"Pesan promosi terkirim ke {grup}")
@@ -57,12 +57,12 @@ async def kirim_pesan_berkala():
                 print(f"Gagal kirim ke {grup}: {e}")
             
             # Jeda antar grup (5-30 detik)
-            jeda = random.randint(5, 30)
+            jeda = random.randint(3, 7)
             print(f"Menunggu {jeda} detik sebelum ke grup berikutnya...")
             await asyncio.sleep(jeda)
         
         print("Semua grup sudah dikirimi. Menunggu 5 menit...")
-        await asyncio.sleep(300)
+        await asyncio.sleep(40)
 
 async def main():
     await client.start()
