@@ -18,7 +18,6 @@ daftar_grup = [
 
 pesan_promosi = """ ┈➤BUTUH BOOST SOSMED, APP PREMIUM & NOKOS? SEMUA ADA! 
 ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
-Halo semuanya! Lagi cari layanan digital murah, cepat, dan aman? Langsung cek katalog kami:
 `Part Of`
 ╰┈➤ `@Cozhua`
 **> 📱 JASA SOSMED:
@@ -51,15 +50,15 @@ Halo semuanya! Lagi cari layanan digital murah, cepat, dan aman? Langsung cek ka
 ➤ Nokos WhatsApp & Telegram
 
 ━━━━━━━━━━━━━━━━━━━━━━
-🛡️ **100% AMAN & GARANSI**
-⚡ **PROSES CEPAT & OTOMATIS**
-💸 **HARGA? DIJAMIN MURAH!**
+ **100% AMAN & GARANSI**
+ **PROSES CEPAT & OTOMATIS**
+ **HARGA? DIJAMIN MURAH!**
 
 **BOT AUTO ORDER 24/7**
-🤖 `@blazeorderrrbot`
-📫 [CATALOG](https://t.me/infoblazepedia/98)
+ @blazeorderrrbot
+ [CATALOG](https://t.me/infoblazepedia/98)
 
-> FREE JASTEB @COZHUA"""
+<blockquote>FREE JASTEB @cozhua</blockquote>"""
 
 # Auto-Reply
 kata_kunci = "DONE KAK" 
@@ -95,7 +94,7 @@ async def kirim_pesan_berkala():
                 async with client.action(grup, 'typing'):
                     await asyncio.sleep(random.randint(0, 1))
                 
-                await client.send_message(grup, pesan_promosi)
+                await client.send_message(grup, pesan_promosi, parse_mode='html')
                 print(f"Pesan promosi terkirim ke {grup}")
             except Exception as e:
                 print(f"Gagal kirim ke {grup}: {e}")
