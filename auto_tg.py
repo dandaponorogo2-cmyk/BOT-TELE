@@ -12,7 +12,8 @@ api_hash = 'd8966ae348811966dfa86d594421e8b1' # Ganti dengan API Hash kamu
 
 # Daftar Grup (Bisa tambah lebih dari satu, pisahkan dengan koma)
 daftar_grup = [
-    -1002698177375,-1002319391976,-1001607582097,-1001487018151
+    -1002698177375,-1002319391976,-1001607582097,-1001487018151,-1001545495459,-1001487018151,-1002220417522,-1001782699823,
+    -1001211846518,-1001564240791,
 ]
 
 pesan_promosi = """🚀 BUTUH BOOST SOSMED, APP PREMIUM & NOKOS? SEMUA ADA! 🚀
@@ -23,11 +24,28 @@ PART OF @COZHUA
 📱 JASA SOSMED:
 ✅ Followers IG & TikTok
 ✅ Likes IG
+✅ SUBS YOUTUBE
+✅ VIEWS YOUTUBE
 
 💎 APP PREMIUM:
 ✅ Telegram Premium
+✅ Telegram Stars
 ✅ Capcut Pro & Canva Pro
 ✅ VIU Private
+✅ Netflix 
+
+👥 KEBUTUHAN GRUP
+✅ MEMBER GRUP WA
+✅ MEMBER CHANNEL WA
+✅ REACT CHANNEL WA
+✅ MEMBER GRUP TELEGRAM
+✅ MEMBER CHANNEL TELEGRAM
+
+📱 OTHER APPS
+✅ CHATGPT 
+✅ VPN 
+✅ CHEAT ALL GAME
+✅ TOP UP ROBUX 
 
 📞 NOKOS/OTP INSTAN:
 ✅ Nokos WhatsApp & Telegram
@@ -37,11 +55,12 @@ PART OF @COZHUA
 ⚡ PROSES CEPAT & OTOMATIS
 💸 HARGA? DIJAMIN MURAH!
 
-***BOT AUTO ORDER 24/7***
+**BOT AUTO ORDER 24/7**
 🤖 @blazeorderrrbot
 👽 @COZHUA
+🧑‍🔧 @@infoblazepedia
 
-<i> FREE JASTEB @COZHUA <i>"""
+<i>FREE JASTEB @COZHUA<i>"""
 
 # Auto-Reply
 kata_kunci = "DONE KAK" 
