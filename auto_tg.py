@@ -19,36 +19,36 @@ daftar_grup = [
 pesan_promosi = """🚀 BUTUH BOOST SOSMED, APP PREMIUM & NOKOS? SEMUA ADA! 🚀
 ━━━━━━━━━━━━━━━━━━━━━━
 Halo semuanya! Lagi cari layanan digital murah, cepat, dan aman? Langsung cek katalog kami:
-`Part Of @Cozhua`
-
+`Part Of`
+╰┈➤ `@Cozhua`
 **> 📱 JASA SOSMED:
-✅ Followers IG & TikTok
-✅ Likes IG
-✅ SUBS YOUTUBE
-✅ VIEWS YOUTUBE**
+➤ Followers IG & TikTok
+➤ Likes IG
+➤ SUBS YOUTUBE
+➤ VIEWS YOUTUBE**
 
 **>💎 APP PREMIUM:
-✅ Telegram Premium
-✅ Telegram Stars
-✅ Capcut Pro & Canva Pro
-✅ VIU Private
-✅ Netflix**
+➤ Telegram Premium
+➤ Telegram Stars
+➤ Capcut Pro & Canva Pro
+➤ VIU Private
+➤ Netflix**
 
 **>👥 KEBUTUHAN GRUP
-✅ MEMBER GRUP WA
-✅ MEMBER CHANNEL WA
-✅ REACT CHANNEL WA
-✅ MEMBER GRUP TELEGRAM
-✅ MEMBER CHANNEL TELEGRAM**
+➤ MEMBER GRUP WA
+➤ MEMBER CHANNEL WA
+➤ REACT CHANNEL WA
+➤ MEMBER GRUP TELEGRAM
+➤ MEMBER CHANNEL TELEGRAM**
 
 📱 OTHER APPS
-✅ CHATGPT 
-✅ VPN 
-✅ CHEAT ALL GAME
-✅ TOP UP ROBUX 
+➤ CHATGPT 
+➤ VPN 
+➤ CHEAT ALL GAME
+➤ TOP UP ROBUX 
 
 📞 NOKOS/OTP INSTAN:
-✅ Nokos WhatsApp & Telegram
+➤ Nokos WhatsApp & Telegram
 
 ━━━━━━━━━━━━━━━━━━━━━━
 🛡️ **100% AMAN & GARANSI**
