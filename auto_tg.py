@@ -18,28 +18,28 @@ daftar_grup = [
 
 pesan_promosi = """🚀 BUTUH BOOST SOSMED, APP PREMIUM & NOKOS? SEMUA ADA! 🚀
 ━━━━━━━━━━━━━━━━━━━━━━
-Halo semuanya! 👋 Lagi cari layanan digital murah, cepat, dan aman? Langsung cek katalog kami:
-PART OF @COZHUA
+Halo semuanya! Lagi cari layanan digital murah, cepat, dan aman? Langsung cek katalog kami:
+`Part Of @Cozhua`
 
-📱 JASA SOSMED:
+**> 📱 JASA SOSMED:
 ✅ Followers IG & TikTok
 ✅ Likes IG
 ✅ SUBS YOUTUBE
-✅ VIEWS YOUTUBE
+✅ VIEWS YOUTUBE**
 
-💎 APP PREMIUM:
+**>💎 APP PREMIUM:
 ✅ Telegram Premium
 ✅ Telegram Stars
 ✅ Capcut Pro & Canva Pro
 ✅ VIU Private
-✅ Netflix 
+✅ Netflix**
 
-👥 KEBUTUHAN GRUP
+**>👥 KEBUTUHAN GRUP
 ✅ MEMBER GRUP WA
 ✅ MEMBER CHANNEL WA
 ✅ REACT CHANNEL WA
 ✅ MEMBER GRUP TELEGRAM
-✅ MEMBER CHANNEL TELEGRAM
+✅ MEMBER CHANNEL TELEGRAM**
 
 📱 OTHER APPS
 ✅ CHATGPT 
@@ -59,7 +59,7 @@ PART OF @COZHUA
 🤖 `@blazeorderrrbot`
 📫 [CATALOG](https://t.me/infoblazepedia/98)
 
-**> FREE JASTEB @COZHUA**"""
+> FREE JASTEB @COZHUA"""
 
 # Auto-Reply
 kata_kunci = "DONE KAK" 
