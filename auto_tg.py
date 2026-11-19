@@ -16,49 +16,51 @@ daftar_grup = [
     -1001211846518,-1001564240791,
 ]
 
-pesan_promosi = """ ┈➤BUTUH BOOST SOSMED, APP PREMIUM & NOKOS? SEMUA ADA! 
+# TEKS PROMOSI (FORMAT HTML 100%)
+pesan_promosi = """ ┈➤ <b>BUTUH BOOST SOSMED, APP PREMIUM & NOKOS? SEMUA ADA!</b> 
 ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
-`Part Of`
-╰┈➤ `@Cozhua`
-**> 📱 JASA SOSMED:
+<code>Part Of</code>
+╰┈➤ <code>@Cozhua</code>
+
+<blockquote><b>📱 JASA SOSMED:</b>
 ➤ Followers IG & TikTok
 ➤ Likes IG
 ➤ SUBS YOUTUBE
-➤ VIEWS YOUTUBE**
+➤ VIEWS YOUTUBE</blockquote>
 
-**>💎 APP PREMIUM:
+<blockquote><b>💎 APP PREMIUM:</b>
 ➤ Telegram Premium
 ➤ Telegram Stars
 ➤ Capcut Pro & Canva Pro
 ➤ VIU Private
-➤ Netflix**
+➤ Netflix</blockquote>
 
-**>👥 KEBUTUHAN GRUP
+<blockquote><b>👥 KEBUTUHAN GRUP:</b>
 ➤ MEMBER GRUP WA
 ➤ MEMBER CHANNEL WA
 ➤ REACT CHANNEL WA
 ➤ MEMBER GRUP TELEGRAM
-➤ MEMBER CHANNEL TELEGRAM**
+➤ MEMBER CHANNEL TELEGRAM</blockquote>
 
-📱 OTHER APPS
+<b>📱 OTHER APPS</b>
 ➤ CHATGPT 
 ➤ VPN 
 ➤ CHEAT ALL GAME
 ➤ TOP UP ROBUX 
 
-📞 NOKOS/OTP INSTAN:
+<b>📞 NOKOS/OTP INSTAN:</b>
 ➤ Nokos WhatsApp & Telegram
 
 ━━━━━━━━━━━━━━━━━━━━━━
- **100% AMAN & GARANSI**
- **PROSES CEPAT & OTOMATIS**
- **HARGA? DIJAMIN MURAH!**
+🛡️ <b>100% AMAN & GARANSI</b>
+⚡ <b>PROSES CEPAT & OTOMATIS</b>
+💸 <b>HARGA? DIJAMIN MURAH!</b>
 
-**BOT AUTO ORDER 24/7**
- @blazeorderrrbot
- [CATALOG](https://t.me/infoblazepedia/98)
+<b>🛒 BOT AUTO ORDER 24/7</b>
+🤖 @blazeorderrrbot
+📢 <a href="https://t.me/infoblazepedia/98">KLIK DISINI UNTUK CATALOG</a>
 
-<blockquote>FREE JASTEB @cozhua</blockquote>"""
+<blockquote>🎁 FREE JASTEB @cozhua</blockquote>"""
 
 # Auto-Reply
 kata_kunci = "DONE KAK" 
@@ -72,6 +74,7 @@ if session_str:
     client = TelegramClient(StringSession(session_str), api_id, api_hash)
 else:
     client = TelegramClient('sesi_bot', api_id, api_hash)
+
 # --- FITUR AUTO-REPLY + SIMULASI MENGETIK ---
 @client.on(events.NewMessage(incoming=True, pattern=f'(?i){kata_kunci}'))
 async def handler_auto_reply(event):
@@ -82,7 +85,8 @@ async def handler_auto_reply(event):
         async with client.action(event.chat_id, 'typing'):
             await asyncio.sleep(random.randint(2, 5))
             
-        await event.reply(balasan_otomatis)
+        # Tambahkan parse_mode='html' jika balasan Anda mengandung format
+        await event.reply(balasan_otomatis, parse_mode='html')
         print("Balasan terkirim!")
 
 # --- FITUR KIRIM MULTI-GRUP + SIMULASI MENGETIK ---
@@ -90,22 +94,24 @@ async def kirim_pesan_berkala():
     while True:
         for grup in daftar_grup:
             try:
-                # SIMULASI MENGETIK (3 sampai 8 detik)
+                # SIMULASI MENGETIK (0 sampai 1 detik)
                 async with client.action(grup, 'typing'):
                     await asyncio.sleep(random.randint(0, 1))
                 
+                # Kirim pesan dengan mode HTML
                 await client.send_message(grup, pesan_promosi, parse_mode='html')
                 print(f"Pesan promosi terkirim ke {grup}")
             except Exception as e:
                 print(f"Gagal kirim ke {grup}: {e}")
             
-            # Jeda antar grup (5-30 detik)
+            # Jeda antar grup (3-7 detik)
             jeda = random.randint(3, 7)
             print(f"Menunggu {jeda} detik sebelum ke grup berikutnya...")
             await asyncio.sleep(jeda)
         
+        # PERBAIKAN: Tidur 300 detik (5 menit) agar sesuai dengan teks print
         print("Semua grup sudah dikirimi. Menunggu 5 menit...")
-        await asyncio.sleep(40)
+        await asyncio.sleep(300)
 
 async def main():
     await client.start()
