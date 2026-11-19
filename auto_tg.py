@@ -6,19 +6,19 @@ from telethon import TelegramClient, events, Button
 from telethon.sessions import StringSession
 
 # ==========================================
-# KONFIGURASI UTAMA
+# KONFIGURASI UTAMA (WAJIB DIGANTI)
 # ==========================================
-api_id = 30926385  # Ganti dengan API ID Anda
+api_id = 30926385  # Ganti dengan API ID Anda (Angka)
 api_hash = 'd8966ae348811966dfa86d594421e8b1'  # Ganti dengan API Hash Anda
-OWNER_ID = 8674245854 # <--- MASUKKAN ID TELEGRAM ANDA (Bukan ID bot)
+OWNER_ID = 8674245854  # Ganti dengan ID Telegram Anda (Angka murni, tanpa tanda kutip)
 
-# File untuk menyimpan pengaturan
+# File penyimpanan pengaturan
 CONFIG_FILE = "config_bot.json"
 
-# Pengaturan Default (Jika file config belum ada)
+# Pengaturan Default (Jika baru pertama kali dijalankan)
 default_config = {
-    "daftar_grup": [-1002698177375],
-    "pesan_promosi": "<b>Teks Promosi Default Anda</b>",
+    "daftar_grup": [],
+    "pesan_promosi": "<b>Ini Teks Promosi Default</b>\nSilakan edit melalui menu /admin.",
     "jeda_detik": 15
 }
 
@@ -40,7 +40,7 @@ def save_config(data):
 # ==========================================
 # INISIALISASI BOT
 # ==========================================
-print("Mencoba login ke Telegram...")
+print("Memulai bot...")
 session_str = os.environ.get('TG_SESSION', '')
 
 if session_str:
@@ -51,21 +51,25 @@ else:
 admin_state = {} # Menyimpan status admin yang sedang mengedit
 
 # ==========================================
-# 1. FITUR AUTO-REPLY
+# FITUR 1: AUTO-REPLY (MENJAWAB "DONE KAK")
 # ==========================================
 @client.on(events.NewMessage(incoming=True, pattern=r'(?i)DONE KAK'))
 async def handler_auto_reply(event):
     if event.is_group:
-        print(f"[{event.chat.title}] Ada yang chat: DONE KAK")
+        print(f"[Auto-Reply] Membalas chat di {event.chat.title}")
         async with client.action(event.chat_id, 'typing'):
-            await asyncio.sleep(random.randint(2, 5))
+            await asyncio.sleep(random.randint(2, 4))
         await event.reply("Otw kak, wait yaw...")
 
 # ==========================================
-# 2. FITUR ADMIN PANEL (/admin)
+# FITUR 2: ADMIN PANEL (/admin)
 # ==========================================
-@client.on(events.NewMessage(pattern=r'^/admin$', from_users=OWNER_ID))
+@client.on(events.NewMessage(pattern=r'^/admin$'))
 async def admin_panel(event):
+    if event.sender_id != OWNER_ID:
+        return # Abaikan jika bukan Anda
+    
+    print("[Admin] Menu dibuka.")
     buttons = [
         [Button.inline("📝 Edit Teks Promosi", data=b"edit_text")],
         [Button.inline("➕ Tambah Grup Target", data=b"add_group")],
@@ -73,22 +77,26 @@ async def admin_panel(event):
         [Button.inline("🗑️ Hapus Semua Grup", data=b"clear_group")],
         [Button.inline("⚙️ Ubah Jeda Waktu", data=b"edit_delay")]
     ]
-    await event.respond("<b>🛠️ ADMIN PANEL BLAZE PEDIA</b>\nSilakan pilih menu:", buttons=buttons, parse_mode='html')
+    await event.respond(
+        "<b>🛠️ ADMIN PANEL BLAZE PEDIA</b>\nSilakan pilih menu di bawah ini:", 
+        buttons=buttons, 
+        parse_mode='html'
+    )
 
 # ==========================================
-# 3. HANDLER TOMBOL ADMIN PANEL
+# FITUR 3: HANDLER TOMBOL MENU
 # ==========================================
 @client.on(events.CallbackQuery)
 async def callback_handler(event):
     if event.sender_id != OWNER_ID:
-        return await event.answer("Akses ditolak. Anda bukan Owner.", alert=True)
+        return await event.answer("Akses ditolak.", alert=True)
 
     config = load_config()
     data = event.data.decode('utf-8')
 
     if data == "list_group":
         if not config['daftar_grup']:
-            text = "Daftar grup kosong."
+            text = "Daftar grup masih kosong."
         else:
             text = "<b>Daftar Grup Target:</b>\n"
             for i, g in enumerate(config['daftar_grup']):
@@ -99,37 +107,33 @@ async def callback_handler(event):
     elif data == "edit_text":
         admin_state[event.sender_id] = "edit_text"
         await event.answer()
-        msg = await event.respond("Silakan balas pesan ini dengan teks promosi baru (Bisa pakai format HTML):")
-        # Gunakan force reply
-        await client.send_message(event.sender_id, "Ketik teks di sini...", reply_to=msg.id)
+        await event.respond("Silakan ketik teks promosi baru Anda sekarang (bisa pakai HTML):")
 
     elif data == "add_group":
         admin_state[event.sender_id] = "add_group"
         await event.answer()
-        msg = await event.respond("Silakan balas pesan ini dengan ID Grup baru (contoh: -1001234567890):")
-        await client.send_message(event.sender_id, "Ketik ID Grup di sini...", reply_to=msg.id)
+        await event.respond("Silakan ketik ID Grup baru (contoh: -1001234567890):")
 
     elif data == "edit_delay":
         admin_state[event.sender_id] = "edit_delay"
         await event.answer()
-        msg = await event.respond("Silakan balas pesan ini dengan angka jeda dalam detik (contoh: 30):")
-        await client.send_message(event.sender_id, "Ketik angka di sini...", reply_to=msg.id)
+        await event.respond("Silakan ketik angka jeda dalam detik (contoh: 30):")
 
     elif data == "clear_group":
         config['daftar_grup'] = []
         save_config(config)
-        await event.answer("Semua grup berhasil dihapus!", alert=True)
+        await event.answer("✅ Semua grup berhasil dihapus!", alert=True)
 
 # ==========================================
-# 4. MENANGKAP BALASAN INPUT DARI ADMIN
+# FITUR 4: MENANGKAP INPUT DARI ADMIN
 # ==========================================
-@client.on(events.NewMessage(from_users=OWNER_ID))
+@client.on(events.NewMessage())
 async def admin_input_handler(event):
-    user_id = event.sender_id
-    
-    # Cek apakah admin sedang dalam mode mengedit
-    if user_id in admin_state:
-        action = admin_state[user_id]
+    if event.sender_id != OWNER_ID:
+        return # Hanya proses pesan dari Anda
+
+    if event.sender_id in admin_state:
+        action = admin_state[event.sender_id]
         text = event.text
         config = load_config()
 
@@ -137,12 +141,11 @@ async def admin_input_handler(event):
             config['pesan_promosi'] = text
             save_config(config)
             await event.reply("✅ Teks promosi berhasil diubah!")
-            del admin_state[user_id]
+            del admin_state[event.sender_id]
 
         elif action == "add_group":
             try:
-                # Validasi ID harus angka
-                int(text) 
+                int(text) # Validasi apakah berupa angka
                 if text not in config['daftar_grup']:
                     config['daftar_grup'].append(text)
                     save_config(config)
@@ -150,8 +153,8 @@ async def admin_input_handler(event):
                 else:
                     await event.reply("⚠️ Grup tersebut sudah ada di daftar.")
             except ValueError:
-                await event.reply("❌ Gagal! Harap masukkan ID berupa angka (contoh: -1001234567890).")
-            del admin_state[user_id]
+                await event.reply("❌ Gagal! Harap masukkan ID berupa angka (contoh: -100...).")
+            del admin_state[event.sender_id]
 
         elif action == "edit_delay":
             try:
@@ -161,29 +164,30 @@ async def admin_input_handler(event):
                 await event.reply(f"✅ Jeda waktu diubah menjadi {angka} detik.")
             except ValueError:
                 await event.reply("❌ Gagal! Harap masukkan angka saja.")
-            del admin_state[user_id]
+            del admin_state[event.sender_id]
 
 # ==========================================
-# 5. FITUR AUTO-SHARE (KIRIM PESAN BERKALA)
+# FITUR 5: AUTO-SHARE (KIRIM PESAN BERKALA)
 # ==========================================
-async def kirim_pesan_berkala():
-    await asyncio.sleep(3) # Tunggu bot login
+async def auto_share_loop():
+    await asyncio.sleep(5) # Tunggu bot login
     print("Memulai proses Auto-Share...")
     
     while True:
-        config = load_config() # Baca config terbaru setiap putaran
+        config = load_config() # Baca config terbaru
         grup_list = config.get("daftar_grup", [])
         pesan = config.get("pesan_promosi", "")
         jeda = config.get("jeda_detik", 15)
 
         if not grup_list:
-            print("Daftar grup kosong. Menunggu 1 menit...")
+            print("Belum ada grup. Menunggu 1 menit...")
             await asyncio.sleep(60)
             continue
 
         for grup in grup_list:
             try:
-                async with client.action(grup, 'typing'):
+                # Simulasi mengetik
+                async with client.action(int(grup), 'typing'):
                     await asyncio.sleep(random.randint(1, 3))
                 
                 await client.send_message(int(grup), pesan, parse_mode='html')
@@ -191,6 +195,7 @@ async def kirim_pesan_berkala():
             except Exception as e:
                 print(f"❌ Gagal kirim ke {grup}: {e}")
             
+            # Jeda antar grup
             await asyncio.sleep(jeda)
         
         print("Selesai satu putaran. Menunggu 5 menit...")
@@ -201,12 +206,12 @@ async def kirim_pesan_berkala():
 # ==========================================
 async def main():
     await client.start()
-    print("Login Berhasil! Userbot & Admin Panel berjalan...")
+    print("Login Berhasil! Bot berjalan...")
     
     # Jalankan auto-share di latar belakang
-    client.loop.create_task(kirim_pesan_berkala())
+    client.loop.create_task(auto_share_loop())
     
-    # Jalankan listener
+    # Jalankan bot
     await client.run_until_disconnected()
 
 with client:
