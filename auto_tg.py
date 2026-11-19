@@ -13,7 +13,7 @@ api_hash = 'd8966ae348811966dfa86d594421e8b1' # Ganti dengan API Hash kamu
 # Daftar Grup (Bisa tambah lebih dari satu, pisahkan dengan koma)
 daftar_grup = [
     -1002698177375,-1002319391976,-1001607582097,-1001487018151,-1001545495459,-1001487018151,-1002220417522,-1001782699823,
-    -1001211846518,-1001564240791,
+    -1001211846518,-1001564240791,-1003964945650,
 ]
 
 # TEKS PROMOSI (FORMAT HTML 100%)
@@ -111,7 +111,7 @@ async def kirim_pesan_berkala():
         
         # PERBAIKAN: Tidur 300 detik (5 menit) agar sesuai dengan teks print
         print("Semua grup sudah dikirimi. Menunggu 5 menit...")
-        await asyncio.sleep(300)
+        await asyncio.sleep(30)
 
 async def main():
     await client.start()
