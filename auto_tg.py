@@ -17,7 +17,7 @@ daftar_grup = [
 ]
 
 # TEKS PROMOSI (FORMAT HTML 100%)
-pesan_promosi = """ ┈➤ <b>BUTUH BOOST SOSMED, APP PREMIUM & NOKOS? SEMUA ADA!</b> 
+pesan_promosi = """ ┈➤ <b>NEED BOOST SOSMED, APP PREMIUM & NOKOS? SEMUA ADA!</b> 
 ⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
 <code>Part Of</code>
 ╰┈➤ <code>@Cozhua</code>
@@ -49,7 +49,7 @@ pesan_promosi = """ ┈➤ <b>BUTUH BOOST SOSMED, APP PREMIUM & NOKOS? SEMUA ADA
 ➤ TOP UP ROBUX 
 
 <b> NOKOS/OTP INSTAN:</b>
-➤ Nokos WhatsApp & Telegram
+➤ Nokos WhatsApp& Telegram
 
 ━━━━━━━━━━━━━━━━━━━━━━
  <b>100% AMAN & GARANSI</b>
@@ -59,6 +59,7 @@ pesan_promosi = """ ┈➤ <b>BUTUH BOOST SOSMED, APP PREMIUM & NOKOS? SEMUA ADA
 <b> BOT AUTO ORDER 24/7</b>
 🤖 @blazeorderrrbot
 📢 <a href="https://t.me/infoblazepedia/98">KLIK DISINI UNTUK CATALOG</a>
+👥 <a href="https://t.me/duelanblazepedia">JB ALL SOSMED BEBAS SHARE</a>
 
 <blockquote> FREE JASTEB FROM @cozhua</blockquote>"""
 
