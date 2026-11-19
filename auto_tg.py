@@ -12,10 +12,36 @@ api_hash = 'd8966ae348811966dfa86d594421e8b1' # Ganti dengan API Hash kamu
 
 # Daftar Grup (Bisa tambah lebih dari satu, pisahkan dengan koma)
 daftar_grup = [
-    -1004489967653,-1003967195113,-1003789805526,-1003967195113,-1002098986854,
+    -1002698177375,-1002319391976,-1001607582097,-1001487018151
 ]
 
-pesan_promosi = "FB/LB GERCEP DONE RC https://www.tiktok.com/@cozzhua?_r=1&_t=ZS-9BULWt86hdc"
+pesan_promosi = """🚀 BUTUH BOOST SOSMED, APP PREMIUM & NOKOS? SEMUA ADA! 🚀
+━━━━━━━━━━━━━━━━━━━━━━
+Halo semuanya! 👋 Lagi cari layanan digital murah, cepat, dan aman? Langsung cek katalog kami:
+PART OF @COZHUA
+
+📱 JASA SOSMED:
+✅ Followers IG & TikTok
+✅ Likes IG
+
+💎 APP PREMIUM:
+✅ Telegram Premium
+✅ Capcut Pro & Canva Pro
+✅ VIU Private
+
+📞 NOKOS/OTP INSTAN:
+✅ Nokos WhatsApp & Telegram
+
+━━━━━━━━━━━━━━━━━━━━━━
+🛡️ 100% AMAN & GARANSI
+⚡ PROSES CEPAT & OTOMATIS
+💸 HARGA? DIJAMIN MURAH!
+
+***BOT AUTO ORDER 24/7***
+🤖 @blazeorderrrbot
+👽 @COZHUA
+
+<i> FREE JASTEB @COZHUA <i>"""
 
 # Auto-Reply
 kata_kunci = "DONE KAK" 
