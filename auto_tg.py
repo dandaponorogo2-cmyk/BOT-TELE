@@ -70,6 +70,8 @@ async def admin_panel(event):
         return # Abaikan jika bukan Anda
     
     print("[Admin] Menu dibuka.")
+    
+    # Struktur tombol
     buttons = [
         [Button.inline("📝 Edit Teks Promosi", data=b"edit_text")],
         [Button.inline("➕ Tambah Grup Target", data=b"add_group")],
@@ -77,9 +79,12 @@ async def admin_panel(event):
         [Button.inline("🗑️ Hapus Semua Grup", data=b"clear_group")],
         [Button.inline("⚙️ Ubah Jeda Waktu", data=b"edit_delay")]
     ]
-    await event.respond(
-        "<b>🛠️ ADMIN PANEL BLAZE PEDIA</b>\nSilakan pilih menu di bawah ini:", 
-        buttons=buttons, 
+    
+    # Gunakan client.send_message agar tombol lebih stabil
+    await client.send_message(
+        event.chat_id,
+        "<b>🛠️ ADMIN PANEL BLAZE PEDIA</b>\nSilakan pilih menu di bawah ini:",
+        buttons=buttons,
         parse_mode='html'
     )
 
