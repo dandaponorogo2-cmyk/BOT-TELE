@@ -59,8 +59,8 @@ PART OF @COZHUA
 🤖 `@blazeorderrrbot`
 📫 [CATALOG](https://t.me/infoblazepedia/98)
 
-**> FREE JASTEB @COZHUA**
-
+**> FREE JASTEB @COZHUA**"""
+y
 # Auto-Reply
 kata_kunci = "DONE KAK" 
 balasan_otomatis = "Otw kak wait yaw"
