@@ -16,8 +16,8 @@ daftar_grup = [
     -1001211846518,-1001564240791,
 ]
 
-pesan_promosi = """🚀 BUTUH BOOST SOSMED, APP PREMIUM & NOKOS? SEMUA ADA! 🚀
-━━━━━━━━━━━━━━━━━━━━━━
+pesan_promosi = """ ┈➤BUTUH BOOST SOSMED, APP PREMIUM & NOKOS? SEMUA ADA! 
+⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘
 Halo semuanya! Lagi cari layanan digital murah, cepat, dan aman? Langsung cek katalog kami:
 `Part Of`
 ╰┈➤ `@Cozhua`
