@@ -22,45 +22,45 @@ pesan_promosi = """ ┈➤ <b>BUTUH BOOST SOSMED, APP PREMIUM & NOKOS? SEMUA ADA
 <code>Part Of</code>
 ╰┈➤ <code>@Cozhua</code>
 
-<blockquote><b>📱 JASA SOSMED:</b>
+<blockquote><b> JASA SOSMED:</b>
 ➤ Followers IG & TikTok
 ➤ Likes IG
 ➤ SUBS YOUTUBE
 ➤ VIEWS YOUTUBE</blockquote>
 
-<blockquote><b>💎 APP PREMIUM:</b>
+<blockquote><b> APP PREMIUM:</b>
 ➤ Telegram Premium
 ➤ Telegram Stars
 ➤ Capcut Pro & Canva Pro
 ➤ VIU Private
 ➤ Netflix</blockquote>
 
-<blockquote><b>👥 KEBUTUHAN GRUP:</b>
+<blockquote><b> KEBUTUHAN GRUP:</b>
 ➤ MEMBER GRUP WA
 ➤ MEMBER CHANNEL WA
 ➤ REACT CHANNEL WA
 ➤ MEMBER GRUP TELEGRAM
 ➤ MEMBER CHANNEL TELEGRAM</blockquote>
 
-<b>📱 OTHER APPS</b>
+<b> OTHER APPS</b>
 ➤ CHATGPT 
 ➤ VPN 
 ➤ CHEAT ALL GAME
 ➤ TOP UP ROBUX 
 
-<b>📞 NOKOS/OTP INSTAN:</b>
+<b> NOKOS/OTP INSTAN:</b>
 ➤ Nokos WhatsApp & Telegram
 
 ━━━━━━━━━━━━━━━━━━━━━━
-🛡️ <b>100% AMAN & GARANSI</b>
-⚡ <b>PROSES CEPAT & OTOMATIS</b>
-💸 <b>HARGA? DIJAMIN MURAH!</b>
+ <b>100% AMAN & GARANSI</b>
+ <b>PROSES CEPAT & OTOMATIS</b>
+ <b>HARGA? DIJAMIN MURAH!</b>
 
-<b>🛒 BOT AUTO ORDER 24/7</b>
+<b> BOT AUTO ORDER 24/7</b>
 🤖 @blazeorderrrbot
 📢 <a href="https://t.me/infoblazepedia/98">KLIK DISINI UNTUK CATALOG</a>
 
-<blockquote>🎁 FREE JASTEB @cozhua</blockquote>"""
+<blockquote> FREE JASTEB FROM @cozhua</blockquote>"""
 
 # Auto-Reply
 kata_kunci = "DONE KAK" 
