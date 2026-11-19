@@ -51,16 +51,15 @@ PART OF @COZHUA
 ✅ Nokos WhatsApp & Telegram
 
 ━━━━━━━━━━━━━━━━━━━━━━
-🛡️ 100% AMAN & GARANSI
-⚡ PROSES CEPAT & OTOMATIS
-💸 HARGA? DIJAMIN MURAH!
+🛡️ **100% AMAN & GARANSI**
+⚡ **PROSES CEPAT & OTOMATIS**
+💸 **HARGA? DIJAMIN MURAH!**
 
 **BOT AUTO ORDER 24/7**
-🤖 @blazeorderrrbot
-👽 @COZHUA
-🧑‍🔧 @@infoblazepedia
+🤖 `@blazeorderrrbot`
+📫 [CATALOG](https://t.me/infoblazepedia/98)
 
-<i>FREE JASTEB @COZHUA<i>"""
+**> FREE JASTEB @COZHUA**
 
 # Auto-Reply
 kata_kunci = "DONE KAK" 
